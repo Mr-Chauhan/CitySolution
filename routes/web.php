@@ -58,14 +58,9 @@ Route::group(['namespace' => 'powerpanel','middleware'=>['isAdmin', 'auth:admin'
     Route::post('/powerpanel/complains/deleteRecord', ['uses' => 'ComplainsController@deleteRecord'])->name('complains.deleteRecord');
     Route::post('/powerpanel/contactus/deleteRecord', ['uses' => 'ContactUsLeadController@deleteRecord'])->name('contactus.deleteRecord');
     Route::post('/powerpanel/photogallery/deleteRecord', ['uses' => 'PhotoGalleryController@deleteRecord'])->name('photogallery.deleteRecord');
-
     
 });
 
-// Route::get('powerpanel/', 'Auth\LoginController@showLoginForm');
-// Route::get('powerpanel/login', 'Auth\LoginController@showLoginForm')->name('login');
-// Route::post('powerpanel/login', 'Auth\LoginController@login');
-// Route::post('powerpanel/logout', 'Auth\LoginController@logout')->name('logout');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
